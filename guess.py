@@ -18,8 +18,7 @@ word10 = randomword('words.txt')
 words = [word, word2, word3, word4, word5, word6, word7, word8, word9, word10]
 length = len(words)
 choice = words[random.randint(0, len(words) - 1)]
-lifes = 8
-print("my words of choice is:    " + choice)
+lifes = 9
 
 while lifes > 0:
     print("im thinking of a word, lets guess the word")
@@ -32,9 +31,7 @@ while lifes > 0:
         print("you got it!")
         break
     
-    if lifes == 0:
-        print("You have no lifes left, the word was: " + wordofchoice)
-        break
+
 
     if pick == "q":
         break
@@ -44,3 +41,8 @@ while lifes > 0:
         lifes -= 1
         if pick in words:
             words.remove(pick)
+
+    if lifes == 0:
+        print("You have no lifes left, the word was: " + wordofchoice)
+        input("Press enter to exit")
+        break
